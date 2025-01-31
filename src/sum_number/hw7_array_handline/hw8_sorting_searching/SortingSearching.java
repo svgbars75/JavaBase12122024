@@ -10,6 +10,18 @@ public class SortingSearching {
         }
         System.out.println("Элементы несортированного массива:" + Arrays.toString(sort));
 
+        for ( int i = 1; i < sort.length; i++){
+            // Assign the key
+            int key =sort[i];
+            int j = i - 1;
+            // Place the element before all greater elements
+            while (j >= 0 && sort[j] > key){
+                sort[j+1] = sort[j];
+                j--;
+            }
+            sort[j+1] = key;
+        }
+        System.out.println("Элементы отсортированного массива по возростанию:" + Arrays.toString(sort));
 
     }
 }
